@@ -29,6 +29,10 @@ objects:
         to:
           kind: ImageStreamTag
           name: ${NAME}-${SUFFIX}-image:latest
+      resources:
+        limits:
+          cpu: "500m" 
+          memory: "512Mi"
   - apiVersion: v1
     kind: ImageStream
     labels:
