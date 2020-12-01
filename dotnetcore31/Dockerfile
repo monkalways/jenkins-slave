@@ -36,6 +36,4 @@ RUN scl enable rh-dotnet31 'dotnet help'
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME
 
-RUN git config --config http.sslVerify false
-
 USER 1001
