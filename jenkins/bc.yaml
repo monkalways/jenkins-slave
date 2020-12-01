@@ -41,7 +41,7 @@ parameters:
     displayName: Name
     name: NAME
     required: true
-    value: jenkins-slave-rhel7
+    value: jenkins-slave-centos7
   - description: A name suffix used for all objects
     displayName: Suffix
     name: SUFFIX
@@ -75,7 +75,7 @@ parameters:
     displayName: BASE_IMAGE
     name: BASE_IMAGE
     required: true
-    value: jenkins-slave-base-rhel7
+    value: jenkins-slave-base-centos7
   - description: BASE_IMAGE_NAMESPACE
     displayName: BASE_IMAGE_NAMESPACE
     name: BASE_IMAGE_NAMESPACE
