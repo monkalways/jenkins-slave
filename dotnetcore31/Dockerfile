@@ -21,6 +21,8 @@ ENV DOTNET_CORE_VERSION=3.1 \
 
 COPY contrib/bin/scl_enable /usr/local/bin/scl_enable
 
+COPY .gitconfig /home/jenkins/.gitconfig
+
 # Install
 RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
     INSTALL_PKGS="rh-dotnet31 rh-nodejs10-npm" && \
