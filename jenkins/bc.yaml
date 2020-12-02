@@ -35,11 +35,15 @@ objects:
           memory: "512Mi"
   - apiVersion: v1
     kind: ImageStream
-    labels:
-      app: ${NAME}-${SUFFIX}
     metadata:
       name: ${NAME}-${SUFFIX}-image
-      namespace: ${NAMESPACE}
+      namespace: ${NAMESPACE}  
+      labels:
+        app: ${NAME}-${SUFFIX}
+        role: jenkins-slave
+      annotations:
+        slave-label: ${SUFFIX}        
+
 parameters:
   - description: A name used for all objects
     displayName: Name
