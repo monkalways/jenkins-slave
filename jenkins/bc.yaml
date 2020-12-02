@@ -40,9 +40,9 @@ objects:
       namespace: ${NAMESPACE}  
       labels:
         app: ${NAME}-${SUFFIX}
-        role: jenkins-slave
+        role: jenkins-slave # with "role=jenkins-slave" label, openshift jenkins master can auto-discover slave images
       annotations:
-        slave-label: ${SUFFIX}        
+        slave-label: ${SUFFIX} # with "role=jenkins-slave" annotation, jenkins kubernetes plugin can use it for the label field
 
 parameters:
   - description: A name used for all objects
