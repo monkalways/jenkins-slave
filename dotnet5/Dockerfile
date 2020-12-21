@@ -23,7 +23,7 @@ COPY contrib/bin/scl_enable /usr/local/bin/scl_enable
 
 COPY .gitconfig /home/jenkins/.gitconfig
 
-RUN sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+RUN rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
 
 # Install
 RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
