@@ -16,7 +16,7 @@ ENV DOTNET_CORE_VERSION=5.0 \
     BASH_ENV=/usr/local/bin/scl_enable \
     ENV=/usr/local/bin/scl_enable \
     PROMPT_COMMAND=". /usr/local/bin/scl_enable" \
-    ENABLED_COLLECTIONS="rh-nodejs10 rh-dotnet5" \
+    ENABLED_COLLECTIONS="rh-nodejs10 dotnet-sdk-5.0" \
     NUGET_XMLDOC_MODE=skip
 
 COPY contrib/bin/scl_enable /usr/local/bin/scl_enable
@@ -25,7 +25,7 @@ COPY .gitconfig /home/jenkins/.gitconfig
 
 # Install
 RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
-    INSTALL_PKGS="rh-dotnet5 rh-nodejs10-npm" && \
+    INSTALL_PKGS="dotnet-sdk-5.0 rh-nodejs10-npm" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y && \
@@ -33,7 +33,7 @@ RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
     rm -rf /var/cache/yum/*
 
 # Trigger first time actions.
-RUN scl enable rh-dotnet5 'dotnet help'
+RUN scl enable dotnet-sdk-5.0 'dotnet help'
 
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME
