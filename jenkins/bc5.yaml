@@ -28,7 +28,7 @@ objects:
       output:
         to:
           kind: ImageStreamTag
-          name: ${NAME}-${SUFFIX}-image:latest
+          name: ${NAME}-${SUFFIX}:latest
       resources:
         limits:
           cpu: "500m" 
@@ -36,7 +36,7 @@ objects:
   - apiVersion: v1
     kind: ImageStream
     metadata:
-      name: ${NAME}-${SUFFIX}-image
+      name: ${NAME}-${SUFFIX}
       namespace: ${NAMESPACE}  
       labels:
         app: ${NAME}-${SUFFIX}
@@ -54,7 +54,7 @@ parameters:
     displayName: Suffix
     name: SUFFIX
     required: false
-    value: dotnetcore5
+    value: dotnet5
   - description: A version used for the image tags
     displayName: version
     name: VERSION
@@ -69,7 +69,7 @@ parameters:
     displayName: REPO_PATH
     name: REPO_PATH
     required: true
-    value: /dotnetcore5
+    value: /dotnet5
   - description: REPO_REF
     displayName: REPO_REF
     name: REPO_REF

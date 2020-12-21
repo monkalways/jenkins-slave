@@ -35,7 +35,7 @@ RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
     rm -rf /var/cache/yum/*
 
 # Trigger first time actions.
-RUN scl enable dotnet-sdk-5.0 'dotnet help'
+# RUN scl enable dotnet-sdk-5.0 'dotnet help'
 
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME
