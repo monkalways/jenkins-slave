@@ -28,7 +28,7 @@ objects:
       output:
         to:
           kind: ImageStreamTag
-          name: ${NAME}-${SUFFIX}-image:latest
+          name: ${NAME}-${SUFFIX}:latest
       resources:
         limits:
           cpu: "500m" 
@@ -36,7 +36,7 @@ objects:
   - apiVersion: v1
     kind: ImageStream
     metadata:
-      name: ${NAME}-${SUFFIX}-image
+      name: ${NAME}-${SUFFIX}
       namespace: ${NAMESPACE}  
       labels:
         app: ${NAME}-${SUFFIX}
