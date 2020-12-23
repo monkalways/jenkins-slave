@@ -43,4 +43,4 @@ RUN chown -R 1001:0 $HOME && \
 
 USER 1001
 
-RUN dotnet tool install --global dotnet-sonarscanner 
+# RUN dotnet tool install --global dotnet-sonarscanner 
