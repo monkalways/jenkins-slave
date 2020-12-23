@@ -37,9 +37,10 @@ RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
 # Trigger first time actions.
 # RUN scl enable dotnet-sdk-5.0 'dotnet help'
 
-RUN dotnet tool install --global dotnet-sonarscanner 
 
 RUN chown -R 1001:0 $HOME && \
     chmod -R g+rw $HOME
 
 USER 1001
+
+RUN dotnet tool install --global dotnet-sonarscanner 
